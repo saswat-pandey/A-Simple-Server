@@ -3,6 +3,7 @@ const hbs=require('hbs');
 const fs=require('fs');
 
 var app=express();
+const port=process.env.PORT || 3000;
 hbs.registerPartials(__dirname+'/views/partials');//takes the directory we want to keep/load the partials in
 
 hbs.registerHelper("currYear",()=>new Date().getFullYear());//name of the helper as first arg,,,func to run as second
@@ -64,6 +65,6 @@ app.get('/about',(req,res)=>{
   });//render allows us to render template set up with the view engine:2nd argument is th parameter
 });
 
-app.listen(3000,()=>{
-  console.log("Sever is up on port 3000");
+app.listen(port,()=>{
+  console.log(`Sever is up on port ${port}`);
 });//binds the application on a port ,essential for theprogtam to run..takes second argument...a msg when the server is up ad running
