@@ -24,12 +24,12 @@ app.use((req,res,next)=>{
   next();
 });//next: tell express when the middleware function is done
 
-app.use((req,res,next)=>{
-  res.render("maintainance.hbs",{
-    pageTitle:"Maintainance Page",
-    mntcMsg:"The site is currently under maintaince, please come back later"
-  });
-});
+// app.use((req,res,next)=>{
+//   res.render("maintainance.hbs",{
+//     pageTitle:"Maintainance Page",
+//     mntcMsg:"The site is currently under maintaince, please come back later"
+//   });
+// });
 
 
 app.use(express.static(__dirname+'/public')); //__dirname...stores the path to the project directory
